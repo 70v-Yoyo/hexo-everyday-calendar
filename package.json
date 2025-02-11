@@ -1,0 +1,15 @@
+{
+  "name": "hexo-everyday-calendar",
+  "version": "1.0.0",
+  "description": "A practical plugin for Hexo",
+  "license": "ISC",
+  "author": "wyy",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "hexo": {
+    "version": "7.3.0"
+  }
+}

@@ -1,0 +1,113 @@
+
+  .together{
+    display: block;
+    font-family: "微软雅黑",  sans-serif !important;
+    width:max-content;
+    text-align: center;
+    box-sizing: border-box;/*盒模型*/
+    height: max-content;
+    padding:8px 0px;
+    border-top:0.1px dashed #d1d9e0;
+    border-bottom:0.1px dashed #d1d9e0;
+    border-radius: 5px;
+    margin: 10px auto;
+    padding-left:10px;
+  }
+  .calendar {
+    display: inline-block;
+    margin:auto;
+    height: 220px;
+    width: 500px;
+  }
+  
+  .grid-item {
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border:1px solid #ddd;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  
+  .grid-item.checked {
+    background-color: #92e39a;
+  }
+  
+  .grid-item.unchecked {
+    background-color:#efefef;
+    opacity: 0.5;
+  }
+  
+  .grid-item:hover {
+    opacity: 0.8;
+  }
+  /* 月份格子容器样式 */
+.month-container {
+  width:500px;
+  display: grid;
+  grid-template-columns: repeat(31, 11px); /* 每周7天 */
+  gap: 4px;
+  margin: 2px;
+  justify-content: center;
+}
+
+.month-header {
+  width: 30px;
+  font-size: 8px;
+}
+.month_float{
+  width:30px;
+  display: inline-block;
+  margin-bottom: 1px;
+}
+
+.tooltip{
+  width:80px;
+  border: 1px solid #ccc;
+  background-color: #060d2a;
+  padding: 2px 5px;
+  margin:1px;
+  border-radius: 5px;
+  display: none;
+  color:#fff;
+  font-size:10px;
+}
+label,span,.cpright{
+  font-size: 12px;
+}
+span{
+  margin-right: 10px;
+}
+select{
+  width: 60px;
+  border: 1px solid lightblue;
+  text-align: center;
+  font-size: 11px;
+  margin: 0px 20px 0px 2px;
+}
+option{
+  text-align: center;
+}
+.cpright{
+  color:#ccc;
+}
+.fireworks{
+  position:absolute;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: explode 0.5s ease-out forwards;
+  opacity: 0.5;
+  background-color: aqua;
+}
+
+@keyframes explode {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(3);
+      opacity: 0;
+  }
+}

@@ -16,7 +16,7 @@ npm install hexo-everyday-calendar
 3. 确保你的theme主题中有classname为'site-body'的div块，日历模块会自动放入这里
 4. 自定义放入位置：在你想要放入的位置中，设置div块的classname为'site-body'，即可放入
 
-# 更新 update
+# 更新 Update
 
 ## 2.14
 

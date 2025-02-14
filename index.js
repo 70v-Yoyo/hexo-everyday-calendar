@@ -22,10 +22,13 @@ hexo.extend.generator.register('func.js',function(){
 
 	console.log(typeof(hexo.locals.get('posts')));//object
 	const content=hexo.locals.get('posts').data;
-	const dates=[]
+	const dates={}
 	content.forEach(element => {
 		//console.log(element.title,element.date.toISOString().substring(0,10));
-		dates.push(element.date.toISOString().substring(0,10));
+		let item=element.date.toISOString().substring(0,10);
+		if(item in dates)
+			dates[item]+=1;
+		else dates[item]=1;
 	});
 	console.log(dates);
 

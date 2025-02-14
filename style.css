@@ -16,7 +16,7 @@
   .calendar {
     display: inline-block;
     margin:auto;
-    height: 220px;
+    height: max-content;
     width: 500px;
   }
   
@@ -50,7 +50,19 @@
   margin: 2px;
   justify-content: center;
 }
-
+#desc_blocks{
+  width: max-content;
+  display: inline-block;
+  padding: 1px;
+  margin:0px 1px;
+}
+.desc_blocks_item{
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border:1px solid #ddd;
+  border-radius: 2px;
+}
 .month-header {
   width: 30px;
   font-size: 8px;
@@ -72,24 +84,33 @@
   color:#fff;
   font-size:10px;
 }
-label,span,.cpright{
+label,span,.cpright,.lessmore{
   font-size: 12px;
 }
+.lessmore{
+  text-align: right;
+  margin-right: 5px;
+}
 span{
-  margin-right: 10px;
+  margin-right: 20px;
 }
 select{
+  appearance: none; /* 去除默认样式 */
+  -webkit-appearance: none; /* 针对WebKit浏览器（Chrome, Safari等） */
+  -moz-appearance: none; /* 针对Firefox */
+  text-align: center; /* 尝试居中文本 */
+  text-align-last: center; /* 确保选中的项居中 */
   width: 60px;
-  border: 1px solid lightblue;
-  text-align: center;
+  border-bottom: 1px solid lightblue;
   font-size: 11px;
   margin: 0px 20px 0px 2px;
 }
 option{
-  text-align: center;
+
 }
 .cpright{
   color:#ccc;
+  opacity: 0.5;
 }
 .fireworks{
   position:absolute;

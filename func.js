@@ -1,5 +1,6 @@
 // script.js
 function get_elements(){
+	colors=['#9BE9A8','#3FC463','#31A14E','#216E39']
 	// 获取 DOM 元素
 	p= document.getElementsByClassName('site-body')[0];//前面什么都没加const var的为全局变量
 	together=document.createElement('div');
@@ -55,12 +56,29 @@ function get_elements(){
 	  calendarElement.classList.add('calendar');
 	  together.appendChild(calendarElement);
 	}
+
+	lessmore=document.getElementsByClassName('lessmore')[0];
+	if(lessmore===undefined){
+	  lessmore = document.createElement('p');
+	  lessmore.classList.add('lessmore');
+	  together.appendChild(lessmore);
+	  lessmore.innerHTML="less<div id='desc_blocks'></div>more";
+	  desc_blocks=document.getElementById('desc_blocks');
+	  for(let i=0;i<4;i++){
+		let item=document.createElement('div');
+		item.classList.add('desc_blocks_item');
+		item.style.backgroundColor=colors[i];
+		desc_blocks.appendChild(item);
+	  }
+	}
+
 	fireworks=document.getElementsByClassName('fireworks')[0];
 	if(fireworks===undefined){
 	  fireworks = document.createElement('div');
 	  fireworks.classList.add('fireworks');
 	  together.appendChild(fireworks);
 	}
+	
   }
   
   // 渲染年份选择器
@@ -122,9 +140,22 @@ function getRandomColor() {
 			  monthContainer.appendChild(dayElement);
   
 			  // 检查是否已打卡
-			  
-			  if (checkedDays.includes(`${year}-${padStart2_0(month+1)}-${padStart2_0(day)}`)) {
+			  let thisday=`${year}-${padStart2_0(month+1)}-${padStart2_0(day)}`;
+			  if (thisday in checkedDays) {
 				  dayElement.classList.add('checked');
+				  switch (checkedDays[thisday]){
+					case 1:
+						dayElement.style.backgroundColor=colors[0];
+						break;
+					case 2:
+						dayElement.style.backgroundColor=colors[1];
+						break;
+					case 3:
+						dayElement.style.backgroundColor=colors[2];
+						break;
+					default:
+						dayElement.style.backgroundColor=colors[3];
+				  }
 			  } else {
 				  dayElement.classList.add('unchecked');
 			  }

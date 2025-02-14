@@ -2,6 +2,14 @@
   "name": "hexo-everyday-calendar",
   "version": "1.0.0",
   "description": "A practical plugin for Hexo",
+  "homepage": "https://github.com/70v-Yoyo/hexo-everyday-calendar#readme",
+  "bugs": {
+    "url": "https://github.com/70v-Yoyo/hexo-everyday-calendar/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/70v-Yoyo/hexo-everyday-calendar.git"
+  },
   "license": "ISC",
   "author": "wyy",
   "type": "commonjs",

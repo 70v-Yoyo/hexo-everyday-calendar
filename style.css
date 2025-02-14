@@ -95,22 +95,19 @@ span{
   margin-right: 20px;
 }
 select{
-  appearance: none; /* 去除默认样式 */
-  -webkit-appearance: none; /* 针对WebKit浏览器（Chrome, Safari等） */
-  -moz-appearance: none; /* 针对Firefox */
   text-align: center; /* 尝试居中文本 */
   text-align-last: center; /* 确保选中的项居中 */
   width: 60px;
   border-bottom: 1px solid lightblue;
   font-size: 11px;
-  margin: 0px 20px 0px 2px;
+  margin: 0px 20px 0px 3px;
 }
 option{
 
 }
 .cpright{
   color:#ccc;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 .fireworks{
   position:absolute;

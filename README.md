@@ -1,7 +1,9 @@
+![V1.1.0](https://img.shields.io/npm/v/hexo-everyday-calendar)
+
 # Instructions
 1. Install it directly with npm
 ```bash
-npm install hexo-everyday-calendar
+npm install i hexo-everyday-calendar
 ```
 2. Add it to plugins, the directory of which is the same level as source (a directory)
 3. Make sure you have a div with classname 'site-body' in your theme. The calendar module will automatically be placed there

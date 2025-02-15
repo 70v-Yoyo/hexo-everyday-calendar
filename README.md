@@ -5,7 +5,7 @@
 ```bash
 npm install hexo-everyday-calendar
 ```
-2. (If it isn't work,) Add it to plugins, the directory of which is the same level as source (a directory)
+2. ( If it isn't work,) Add it to plugins, the directory of which is the same level as source (a directory)
 3. Make sure you have a div with classname 'site-body' in your theme. The calendar module will automatically be placed there
 4. Custom place: In the place you want to put, set the classname of the div block to 'site-body', and you can put it in
 

@@ -174,7 +174,7 @@ function getRandomColor() {
 					let color = getRandomColor();
 					firework.style.backgroundColor = color;
 					firework.style.position = 'absolute';
-					const centerX=`${rect.left}`;
+					const centerX=`${rect.left + scrollX}`;
 					const centerY=`${rect.top+ scrollY-210}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
 					console.log(rect.top,centerY)
 					// 设置烟花的初始位置为点击位置

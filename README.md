@@ -1,4 +1,4 @@
-<a href="https://www.npmjs.com/package/hexo-everyday-calendar">![V1.2.0](https://img.shields.io/npm/v/hexo-everyday-calendar)</a>
+<a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/v/hexo-everyday-calendar)</a>
 
 # Instructions
 1. Install it directly with npm

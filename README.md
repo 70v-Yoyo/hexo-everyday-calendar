@@ -1,12 +1,14 @@
 <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/v/hexo-everyday-calendar)</a>
 
+<a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/dt/hexo-everyday-calendar)</a>
+
 # Instructions
 1. Install it directly with npm
 ```bash
 npm install hexo-everyday-calendar
 ```
 2. Add it to plugins, the directory of which is the same level as source (a directory)
-3. Make sure you have a div with classname 'site-body' in your theme. The calendar module will automatically be placed there
+3. Make sure you have a div with classname 'site-body' in your home page. The calendar module will automatically be placed there
 4. Custom place: In the place you want to put, set the classname of the div block to 'site-body', and you can put it in
 
 # 使用说明
@@ -15,7 +17,7 @@ npm install hexo-everyday-calendar
 npm install hexo-everyday-calendar
 ```
 2. 同时放入与source同级的目录plugins下
-3. 确保你的theme主题中有classname为'site-body'的div块，日历模块会自动放入这里
+3. 确保你的首页中有classname为'site-body'的div块，日历模块会自动放入这里
 4. 自定义放入位置：在你想要放入的位置中，设置div块的classname为'site-body'，即可放入
 
 # 更新 Update

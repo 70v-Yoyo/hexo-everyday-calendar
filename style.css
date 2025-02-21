@@ -1,4 +1,21 @@
+html {
+  font-size: 1px ; /* 将根元素的字体大小设置为 1px */
+}
 
+@media (max-width: 650px) {
+  html {
+    font-size: 0.5px;  /* 当视口宽度小于 650px 时，字体大小为 0.5px */
+  }
+}
+@media (min-width: 651px) and (max-width: 1566px)  {
+  html {
+    font-size: 0.7px;  
+  }
+}
+.c_title{
+  font-size: 16rem;
+  font-weight: bold;
+}
   .together{
     display: block;
     font-family: "微软雅黑",  sans-serif !important;
@@ -6,26 +23,27 @@
     text-align: center;
     box-sizing: border-box;/*盒模型*/
     height: max-content;
-    padding:8px 0px;
-    border-top:0.1px dashed #d1d9e0;
-    border-bottom:0.1px dashed #d1d9e0;
-    border-radius: 5px;
-    margin: 10px auto;
-    padding-left:10px;
+    padding:8rem 0rem;
+    border-top:0.1rem dashed #d1d9e0;
+    border-bottom:0.1rem dashed #d1d9e0;
+    border-radius: 5rem;
+    margin: 10rem auto;
+    padding-left:10rem;
+    background-color:  rgba(255, 255, 255, 0.9);
   }
   .calendar {
     display: inline-block;
     margin:auto;
     height: max-content;
-    width: 500px;
+    width: 500rem;
   }
   
   .grid-item {
-    width: 11px;
-    height: 11px;
+    width: 11rem;
+    height: 11rem;
     background-color: #fff;
-    border:1px solid #ddd;
-    border-radius: 2px;
+    border:1rem solid #ddd;
+    border-radius: 2rem;
     cursor: pointer;
   }
   
@@ -43,64 +61,74 @@
   }
   /* 月份格子容器样式 */
 .month-container {
-  width:500px;
+  width:500rem;
   display: grid;
-  grid-template-columns: repeat(31, 11px); /* 每周7天 */
-  gap: 4px;
-  margin: 2px;
+  grid-template-columns: repeat(31, 11rem); /* 每周7天 */
+  gap: 4rem;
+  margin: 2rem;
   justify-content: center;
 }
 #desc_blocks{
   width: max-content;
   display: inline-block;
-  padding: 1px;
-  margin:0px 1px;
+  padding: 1rem;
+  margin:0rem 1rem;
 }
 .desc_blocks_item{
   display: inline-block;
-  width: 11px;
-  height: 11px;
-  border:1px solid #ddd;
-  border-radius: 2px;
+  width: 11rem;
+  height: 11rem;
+  border:1rem solid #ddd;
+  border-radius: 2rem;
 }
 .month-header {
-  width: 30px;
-  font-size: 8px;
+  width: 30rem;
+  font-size: 8rem;
 }
 .month_float{
-  width:30px;
+  width:30rem;
   display: inline-block;
-  margin-bottom: 1px;
+  margin-bottom: 1rem;
 }
 
 .tooltip{
-  width:80px;
-  border: 1px solid #ccc;
+  width:80rem;
+  border: 1rem solid #ccc;
   background-color: #060d2a;
-  padding: 2px 5px;
-  margin:1px;
-  border-radius: 5px;
+  padding: 2rem 5rem;
+  margin:1rem;
+  border-radius: 5rem;
   display: none;
   color:#fff;
-  font-size:10px;
+  font-size:10rem;
 }
 label,span,.cpright,.lessmore{
-  font-size: 12px;
+  font-size: 12rem;
 }
+
 .lessmore{
   text-align: right;
-  margin-right: 5px;
+  margin-right: 5rem;
 }
 span{
-  margin-right: 20px;
+  margin-right: 20rem;
+}
+label{
+  /* margin-left: 60rem; */
 }
 select{
-  text-align: center; /* 尝试居中文本 */
+  /* text-align: center;  */
   text-align-last: center; /* 确保选中的项居中 */
-  width: 60px;
-  border-bottom: 1px solid lightblue;
-  font-size: 11px;
-  margin: 0px 20px 0px 3px;
+  width: 50rem;
+  height:20rem;
+  line-height: 20rem;
+  /* border-left: 1rem solid lightblue; */
+  /* border-right: 1rem solid lightblue; */
+  font-size: 11rem;
+  margin: 15rem 5rem 5rem 5rem;
+  border-radius: 10rem;
+  background-color: transparent !important;
+  
 }
 option{
 
@@ -111,8 +139,8 @@ option{
 }
 .fireworks{
   position:absolute;
-  width: 2px;
-  height: 2px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   animation: explode 0.5s ease-out forwards;
   opacity: 0.5;

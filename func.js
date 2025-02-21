@@ -14,14 +14,14 @@ function get_elements(){
 	title=document.getElementsByClassName('c_title')[0];
 	if (title===undefined){//==会进行类型转换 ===不会
 	  title=document.createElement('span');
-	  title.textContent='打卡墙';
+	  title.textContent='Contribution';
 	  title.classList.add('c_title');
 	  together.appendChild(title);
 	}
 	label=document.getElementsByClassName('c_label')[0];
 	if(label===undefined){
 	  label=document.createElement('label');
-	  label.textContent='选择年份:';
+	  label.textContent='Select Year:';
 	  label.classList.add('c_label')
 	  together.appendChild(label);
 	}

@@ -33,5 +33,9 @@ npm install hexo-everyday-calendar
 2. 修复select组件垂直不居中的问题
 3. 国际化
 
+- 3.6
+
+1. 修复上下和左右间距不一致问题
+
 # 图例 Example
 ![image-20250211172548584](./example.jpg)

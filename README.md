@@ -7,8 +7,8 @@
 ```bash
 npm install hexo-everyday-calendar
 ```
-2. Add it to plugins, the directory of which is the same level as source (a directory)
-3. Make sure you have a div with classname 'site-body' in your home page. The calendar module will automatically be placed there
+2. (If it cannot be displayed normally) Add it to plugins, the directory of which is the same level as source (a directory)
+3. (If it cannot be displayed normally) Make sure you have a div with classname 'site-body' in your home page. The calendar module will automatically be placed there
 4. Custom place: In the place you want to put, set the classname of the div block to 'site-body', and you can put it in
 
 # 使用说明
@@ -16,8 +16,8 @@ npm install hexo-everyday-calendar
 ```bash
 npm install hexo-everyday-calendar
 ```
-2. 同时放入与source同级的目录plugins下
-3. 确保你的首页中有classname为'site-body'的div块，日历模块会自动放入这里
+2. (如果不能正常显示) 同时放入与source同级的目录plugins下
+3. (如果不能正常显示) 确保你的首页中有classname为'site-body'的div块，日历模块会自动放入这里
 4. 自定义放入位置：在你想要放入的位置中，设置div块的classname为'site-body'，即可放入
 
 # 更新 Update

@@ -1,159 +1,285 @@
-html {
-  font-size: 1px ; /* 将根元素的字体大小设置为 1px */
-}
-
-@media (max-width: 650px) {
-  html {
-    font-size: 0.5px;  /* 当视口宽度小于 650px 时，字体大小为 0.5px */
-  }
-}
-@media (min-width: 651px) and (max-width: 1566px)  {
-  html {
-    font-size: 0.7px;  
-  }
-}
 .c_title{
-  font-size: 16rem;
+  font-size: 3vw;
   font-weight: bold;
 }
   .together{
     display: block;
     font-family: "微软雅黑",  sans-serif !important;
-    width:max-content;
+    width:100vw;
     text-align: center;
     box-sizing: border-box;/*盒模型*/
     height: max-content;
-    padding:8rem 0rem;
-    border-top:0.1rem dashed #d1d9e0;
-    border-bottom:0.1rem dashed #d1d9e0;
-    border-radius: 5rem;
-    margin: 10rem auto;
-    padding-left:10rem;
+    padding:1vw 0vw;
+    border-top:0.1vw dashed #d1d9e0;
+    border-bottom:0.1vw dashed #d1d9e0;
+    border-radius: 5vw;
+    margin: 1vw auto;
     background-color:  rgba(255, 255, 255, 0.9);
+    padding-right: 2vw;
+    padding-bottom: 1.5vw;
   }
-  .calendar {
+  #header{
+    width: max-content;
+    margin:0.5vw auto;
+   }
+    .calendar {
+      display: inline-block;
+      margin:auto;
+      height:auto;
+      width: 85vw;
+    }
+    
+    .grid-item {
+      width: 2vw;
+      height: 2vw;
+      background-color: #fff;
+      border:0.1vw solid #ddd;
+      border-radius: 0.5vw;
+      cursor: pointer;
+    }
+    
+    .grid-item.checked {
+      background-color: #92e39a;
+    }
+    
+    .grid-item.unchecked {
+      background-color:#efefef;
+      opacity: 0.5;
+    }
+    
+    .grid-item:hover {
+      opacity: 0.8;
+    }
+    /* 月份格子容器样式 */
+  .month-container {
+    width:inherit;
+    display: grid;
+    grid-template-columns: repeat(31, 2vw); /* 每周7天 */
+    gap: 0.5vw;
+    margin: 0.5vw;
+    justify-content: center;
+  }
+  #desc_blocks{
+    width: 6vw;
     display: inline-block;
-    margin:auto;
-    height: max-content;
-    width: 500rem;
+    padding-right: 0.5vw;
+    margin:0vw 0.2vw;
+  }
+  .desc_blocks_item{
+    display: inline-block;
+    width: 1vw;
+    height: 1vw;
+    border:0.1vw solid #ddd;
+    border-radius: 0.2vw;
+    margin:0 0.1vw;
+  }
+  .month-header {
+    width: 4vw;
+    font-size: 2vw;
+  }
+  .month_float{
+    width:4vw;
+    display: inline-block;
+    margin-bottom: 1vw;
   }
   
-  .grid-item {
-    width: 11rem;
-    height: 11rem;
-    background-color: #fff;
-    border:1rem solid #ddd;
-    border-radius: 2rem;
-    cursor: pointer;
+  .tooltip{
+    width: 16vw;
+    border: 0.1vw solid #ccc;
+    background-color: #060d2a;
+    padding: 0.3vw;
+    border-radius: 1vw;
+    display: none;
+    color:#fff;
+    font-size:2vw;
+  }
+  label,span,.cpright,.lessmore{
+    font-size: 2vw;
   }
   
-  .grid-item.checked {
-    background-color: #92e39a;
+  .lessmore{
+    text-align: right;
+    margin:0.3vw 5vw 0.3vw auto;
   }
-  
-  .grid-item.unchecked {
-    background-color:#efefef;
+  span{
+    margin:0vw 0.5vw;
+  }
+  .c_label{
+    margin-left: 1vw;
+  }
+  select{
+    /* text-align: center;  */
+    text-align-last: center; /* 确保选中的项居中 */
+    width:8vw;
+    height:3vw;
+    line-height: 2vw;
+    /* border-left: 1vw solid lightblue; */
+    /* border-right: 1vw solid lightblue; */
+    font-size: 2vw;
+    margin: 1vw;
+    border-radius: 1.5vw;
+    padding:0.5vw 0;
+    background-color: transparent !important;
+  }
+  .cpright{
+    color:#ccc;
+    opacity: 0.4;
+  }
+  .fireworks{
+    position:absolute;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    animation: explode 0.5s ease-out forwards;
     opacity: 0.5;
+    background-color: transparent;
   }
-  
-  .grid-item:hover {
-    opacity: 0.8;
+  @keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
   }
-  /* 月份格子容器样式 */
-.month-container {
-  width:500rem;
-  display: grid;
-  grid-template-columns: repeat(31, 11rem); /* 每周7天 */
-  gap: 2rem;
-  margin: 2rem;
-  justify-content: center;
-}
-#desc_blocks{
-  width: max-content;
-  display: inline-block;
-  padding: 1rem;
-  margin:0rem 1rem;
-}
-.desc_blocks_item{
-  display: inline-block;
-  width: 11rem;
-  height: 11rem;
-  border:1rem solid #ddd;
-  border-radius: 2rem;
-}
-.month-header {
-  width: 30rem;
-  font-size: 8rem;
-}
-.month_float{
-  width:30rem;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.tooltip{
-  width:80rem;
-  border: 1rem solid #ccc;
-  background-color: #060d2a;
-  padding: 2rem 5rem;
-  margin:1rem;
-  border-radius: 5rem;
-  display: none;
-  color:#fff;
-  font-size:10rem;
-}
-label,span,.cpright,.lessmore{
-  font-size: 12rem;
-}
-
-.lessmore{
-  text-align: right;
-  margin-right: 5rem;
-}
-span{
-  margin-right: 20rem;
-}
-label{
-  /* margin-left: 60rem; */
-}
-select{
-  /* text-align: center;  */
-  text-align-last: center; /* 确保选中的项居中 */
-  width: 50rem;
-  height:20rem;
-  line-height: 20rem;
-  /* border-left: 1rem solid lightblue; */
-  /* border-right: 1rem solid lightblue; */
-  font-size: 11rem;
-  margin: 15rem 5rem 5rem 5rem;
-  border-radius: 10rem;
-  background-color: transparent !important;
-  
-}
-option{
-
-}
-.cpright{
-  color:#ccc;
-  opacity: 0.4;
-}
-.fireworks{
-  position:absolute;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  animation: explode 0.5s ease-out forwards;
-  opacity: 0.5;
-  background-color: aqua;
-}
-
-@keyframes explode {
-  0% {
-      transform: scale(1);
-      opacity: 1;
+  /* 桌面及大屏 */
+@media (min-width: 700px) {
+  .c_title{
+    font-size: 1.5vw;
+    font-weight: bold;
   }
-  100% {
-      transform: scale(3);
-      opacity: 0;
-  }
+    .together{
+      display: block;
+      font-family: "微软雅黑",  sans-serif !important;
+      width:55vw;
+      text-align: center;
+      box-sizing: border-box;/*盒模型*/
+      height: max-content;
+      padding:1vw 0vw;
+      border-top:0.1vw dashed #d1d9e0;
+      border-bottom:0.1vw dashed #d1d9e0;
+      border-radius: 5vw;
+      margin: 1vw auto;
+      background-color:  rgba(255, 255, 255, 0.9);
+      padding-right: 2vw;
+      padding-bottom: 1.5vw;
+    }
+    #header{
+      width: max-content;
+      margin:0.5vw auto;
+     }
+      .calendar {
+        display: inline-block;
+        margin:auto;
+        height:auto;
+        width: 37vw;
+      }
+      
+      .grid-item {
+        width: 1vw;
+        height: 1vw;
+        background-color: #fff;
+        border:0.1vw solid #ddd;
+        border-radius: 0.2vw;
+        cursor: pointer;
+      }
+      
+      .grid-item.checked {
+        background-color: #92e39a;
+      }
+      
+      .grid-item.unchecked {
+        background-color:#efefef;
+        opacity: 0.5;
+      }
+      
+      .grid-item:hover {
+        opacity: 0.8;
+      }
+      /* 月份格子容器样式 */
+    .month-container {
+      width:inherit;
+      display: grid;
+      grid-template-columns: repeat(31, 1vw); /* 每周7天 */
+      gap: 0.2vw;
+      margin: 0.2vw;
+      justify-content: center;
+    }
+    #desc_blocks{
+      width: 5vw;
+      display: inline-block;
+      padding-right: 0.5vw;
+      margin:0vw 0.2vw;
+    }
+    .desc_blocks_item{
+      display: inline-block;
+      width: 0.8vw;
+      height: 0.8vw;
+      border:0.1vw solid #ddd;
+      border-radius: 0.1vw;
+      margin:0 0.1vw;
+    }
+    .month-header {
+      width: 5vw;
+      font-size: 1vw;
+    }
+    .month_float{
+      width:5vw;
+      display: inline-block;
+      margin-bottom: 1vw;
+    }
+    
+    .tooltip{
+      width: 8vw;
+      border: 0.1vw solid #ccc;
+      background-color: #060d2a;
+      padding: 0.3vw;
+      border-radius: 0.5vw;
+      display: none;
+      color:#fff;
+      font-size:1vw;
+    }
+    label,span,.cpright,.lessmore{
+      font-size: 1.1vw;
+    }
+    
+    .lessmore{
+      text-align: right;
+      margin:0.3vw 5vw 0.8vw auto;
+      font-size: 1vw;
+    }
+    span{
+      margin:0vw 1vw;
+    }
+    .c_label{
+      margin-left: 1vw;
+    }
+    select{
+      /* text-align: center;  */
+      text-align-last: center; /* 确保选中的项居中 */
+      width: 6vw;
+      height:2vw;
+      line-height: 1.1vw;
+      /* border-left: 1vw solid lightblue; */
+      /* border-right: 1vw solid lightblue; */
+      font-size: 1.1vw;
+      margin: 1vw;
+      border-radius: 1vw;
+      background-color: transparent !important;
+    }
+    .cpright{
+      color:#ccc;
+      opacity: 0.2;
+    }
+    .fireworks{
+      position:absolute;
+      width: 0.3vw;
+      height: 0.3vw;
+      border-radius: 50%;
+      animation: explode 0.5s ease-out forwards;
+      opacity: 0.5;
+      background-color: transparent;
+    }
 }

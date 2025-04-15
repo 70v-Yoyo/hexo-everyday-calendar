@@ -9,6 +9,7 @@ function get_elements(){
 	console.log(together);
 
 	inline=document.createElement('div');
+	inline.id='header';
 	together.appendChild(inline);
 	
 	title=document.getElementsByClassName('c_title')[0];
@@ -181,19 +182,26 @@ function getRandomColor() {
 					container.style.left = centerX+'px';
 					container.style.top =centerY+'px';
 					firework.style.left = `0px`;
-					firework.style.top =  `0px`;
-					firework.style.width = '2px';
-					firework.style.height = '2px';
+					firework.style.top =  `0vh`;
+					firework.style.width = '0.3vw';
+					firework.style.height = '0.3vw';
+					let factor=0.5
+					if(innerWidth<700){
+						firework.style.width = '1vw';
+						firework.style.height = '1vw';
+						factor=1
+					}
+					
 					firework.style.zIndex='10';
 					firework.style.display='block';
 					console.log(Math.PI/180)
 					const angle=(Math.PI/180)*(i+1)*(360/10);
 					// 计算目标点的坐标
-					const x = Math.cos(angle) * 4;
-					const y = Math.sin(angle) * 4;
+					const x = Math.cos(angle) * factor;
+					const y = Math.sin(angle) * factor;
 					console.log(angle,x,y,centerX,centerY);
 					 // 使用 transform 来计算并设置粒子的位置
-					firework.style.transform = `translate(${x}px, ${y}px)`;
+					firework.style.transform = `translate(${x}vw, ${y}vw)`;
 					// 设置烟花的飞行方向
 					// firework.style.animationName = 'explode';
 					// firework.style.animationTimingFunction = 'ease-out';
@@ -266,8 +274,8 @@ function getRandomColor() {
 		//console.log(date,daytip,rect);
 		daytip.style.position='absolute';
 		//console.log(block,scrollX);
-		daytip.style.left=`${rect.left + scrollX}px`;
-		daytip.style.top=`${rect.top+scrollY -270}px`;
+		daytip.style.left=`${rect.left + scrollX-30}px`;
+		daytip.style.top=`${rect.top+scrollY -250}px`;
 		daytip.style.display='block';
 		
 		})

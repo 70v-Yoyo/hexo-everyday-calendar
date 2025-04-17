@@ -51,5 +51,5 @@ npm install hexo-everyday-calendar
 # 图例 Example
 ![image-20250211172548584](./example.jpg)
 
-The above picture shows the comparison between and mobile effects.
+The above picture shows the comparison of this plugin on desktop and mobile devices.
 

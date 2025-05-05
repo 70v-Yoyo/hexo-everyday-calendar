@@ -48,6 +48,10 @@ npm install hexo-everyday-calendar
 
 1. 修复web端/移动端整体组件过小的问题
 
+- 5.5
+
+1. 修复宽屏显示器显示组件过大的问题
+
 # 图例 Example
 ![image-20250211172548584](./example.jpg)
 

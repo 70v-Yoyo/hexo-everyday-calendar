@@ -275,7 +275,7 @@ function getRandomColor() {
 		daytip.style.position='absolute';
 		//console.log(block,scrollX);
 		daytip.style.left=`${rect.left + scrollX-30}px`;
-		daytip.style.top=`${rect.top+scrollY -250}px`;
+		daytip.style.top=`${rect.top+scrollY -260}px`;
 		daytip.style.display='block';
 		
 		})

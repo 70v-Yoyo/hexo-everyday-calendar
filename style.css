@@ -153,36 +153,36 @@
     .together{
       display: block;
       font-family: "微软雅黑",  sans-serif !important;
-      width:55vw;
+      width:45vw;
       text-align: center;
       box-sizing: border-box;/*盒模型*/
       height: max-content;
-      padding:1vw 0vw;
+      padding:0.5vw 0vw;
       border-top:0.1vw dashed #d1d9e0;
       border-bottom:0.1vw dashed #d1d9e0;
       border-radius: 5vw;
       margin: 1vw auto;
       background-color:  rgba(255, 255, 255, 0.9);
-      padding-right: 2vw;
+      padding-right: 3vw;
       padding-bottom: 1.5vw;
     }
     #header{
       width: max-content;
-      margin:0.5vw auto;
+      margin:0.5vw 0 0.5vw 9vw;
      }
       .calendar {
         display: inline-block;
         margin:auto;
         height:auto;
-        width: 37vw;
+        width: max-content;
       }
       
       .grid-item {
-        width: 1vw;
-        height: 1vw;
+        width: 0.8vw;
+        height: 0.8vw;
         background-color: #fff;
         border:0.1vw solid #ddd;
-        border-radius: 0.2vw;
+        border-radius: 0.1vw;
         cursor: pointer;
       }
       
@@ -202,9 +202,9 @@
     .month-container {
       width:inherit;
       display: grid;
-      grid-template-columns: repeat(31, 1vw); /* 每周7天 */
-      gap: 0.2vw;
-      margin: 0.2vw;
+      grid-template-columns: repeat(31, 0.8vw); /* 每周7天 */
+      gap: 0.15vw;
+      margin: 0.15vw;
       justify-content: center;
     }
     #desc_blocks{
@@ -235,7 +235,7 @@
       width: 8vw;
       border: 0.1vw solid #ccc;
       background-color: #060d2a;
-      padding: 0.3vw;
+      padding: 0.1vw;
       border-radius: 0.5vw;
       display: none;
       color:#fff;
@@ -247,7 +247,7 @@
     
     .lessmore{
       text-align: right;
-      margin:0.3vw 5vw 0.8vw auto;
+      margin:0.3vw 5vw 0.3vw auto;
       font-size: 1vw;
     }
     span{
@@ -271,7 +271,7 @@
     }
     .cpright{
       color:#ccc;
-      opacity: 0.2;
+      opacity: 0.1;
     }
     .fireworks{
       position:absolute;

@@ -1,0 +1,35 @@
+# 忽略测试文件
+test/
+tests/
+__tests__/
+
+# 忽略文档
+docs/
+
+# 忽略源码目录（如果你编译后只发 dist/）
+#src/
+
+# 忽略配置和构建文件
+*.config.js
+*.config.ts
+tsconfig.json
+rollup.config.js
+webpack.config.js
+.vscode/
+.idea/
+
+# 忽略 Git 文件
+.gitignore
+.gitattributes
+
+# 忽略图片资源
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+assets/
+images/
+
+# 如果你使用 dist 发布，确保不要忽略 dist/
+!dist/

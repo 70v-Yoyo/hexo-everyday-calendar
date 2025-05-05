@@ -145,7 +145,7 @@
     }
   }
   /* 桌面及大屏 */
-@media (min-width: 700px) {
+@media (min-aspect-ratio: 1.1) and (max-aspect-ratio: 1.8) {
   .c_title{
     font-size: 1.5vw;
     font-weight: bold;
@@ -283,3 +283,142 @@
       background-color: transparent;
     }
 }
+  /* 超宽屏 */
+  @media (min-aspect-ratio: 1.8)  {
+    .c_title{
+      font-size: 1.5vw;
+      font-weight: bold;
+    }
+      .together{
+        display: block;
+        font-family: "微软雅黑",  sans-serif !important;
+        width:max-content;
+        text-align: center;
+        box-sizing: border-box;/*盒模型*/
+        height: max-content;
+        padding:0.5vw 0vw;
+        border-top:0.1vw dashed #d1d9e0;
+        border-bottom:0.1vw dashed #d1d9e0;
+        border-radius: 5vw;
+        margin: 1vw auto;
+        background-color:  rgba(255, 255, 255, 0.9);
+        padding-right: 3vw;
+        padding-bottom: 1.5vw;
+      }
+      #header{
+        width: max-content;
+        margin:0.5vw 0 0.5vw 9vw;
+       }
+        .calendar {
+          display: inline-block;
+          margin:auto;
+          height:auto;
+          width: max-content;
+        }
+        
+        .grid-item {
+          width: 1rem;
+          height: 1rem;
+          background-color: #fff;
+          border:0.1vw solid #ddd;
+          border-radius: 0.1rem;
+          cursor: pointer;
+        }
+        
+        .grid-item.checked {
+          background-color: #92e39a;
+        }
+        
+        .grid-item.unchecked {
+          background-color:#efefef;
+          opacity: 0.5;
+        }
+        
+        .grid-item:hover {
+          opacity: 0.8;
+        }
+        /* 月份格子容器样式 */
+      .month-container {
+        width:inherit;
+        display: grid;
+        grid-template-columns: repeat(31, 1rem); /* 每周7天 */
+        gap: 0.2rem;
+        margin: 0.2rem;
+        justify-content: center;
+      }
+      #desc_blocks{
+        width: 5vw;
+        display: inline-block;
+        padding-right: 0.5vw;
+        margin:0vw 0.2vw;
+      }
+      .desc_blocks_item{
+        display: inline-block;
+        width: 0.8vw;
+        height: 0.8vw;
+        border:0.1vw solid #ddd;
+        border-radius: 0.1vw;
+        margin:0 0.1vw;
+      }
+      .month-header {
+        width: 5vw;
+        font-size: 1vw;
+      }
+      .month_float{
+        width:5vw;
+        display: inline-block;
+        margin-bottom: 1vw;
+      }
+      
+      .tooltip{
+        width: 8vw;
+        border: 0.1vw solid #ccc;
+        background-color: #060d2a;
+        padding: 0.1vw;
+        border-radius: 0.5vw;
+        display: none;
+        color:#fff;
+        font-size:1vw;
+      }
+      label,span,.cpright,.lessmore{
+        font-size: 1.1vw;
+      }
+      
+      .lessmore{
+        text-align: right;
+        margin:0.3vw 5vw 0.3vw auto;
+        font-size: 1vw;
+      }
+      span{
+        margin:0vw 1vw;
+      }
+      .c_label{
+        margin-left: 1vw;
+      }
+      select{
+        /* text-align: center;  */
+        text-align-last: center; /* 确保选中的项居中 */
+        width: 6vw;
+        height:2vw;
+        line-height: 1.1vw;
+        /* border-left: 1vw solid lightblue; */
+        /* border-right: 1vw solid lightblue; */
+        font-size: 1.1vw;
+        margin: 1vw;
+        border-radius: 1vw;
+        background-color: transparent !important;
+      }
+      .cpright{
+        color:#ccc;
+        opacity: 0.1;
+      }
+      .fireworks{
+        position:absolute;
+        width: 0.3vw;
+        height: 0.3vw;
+        border-radius: 50%;
+        animation: explode 0.5s ease-out forwards;
+        opacity: 0.5;
+        background-color: transparent;
+      }
+  }

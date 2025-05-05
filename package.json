@@ -1,8 +1,15 @@
 {
   "name": "hexo-everyday-calendar",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "A practical plugin for Hexo",
   "homepage": "https://github.com/70v-Yoyo/hexo-everyday-calendar#readme",
+  "keywords": [
+    "Hexo",
+    "Calendar",
+    "Everyday",
+    "Github",
+    "Blog"
+  ],
   "bugs": {
     "url": "https://github.com/70v-Yoyo/hexo-everyday-calendar/issues"
   },

@@ -51,9 +51,10 @@ npm install hexo-everyday-calendar
 - 5.5
 
 1. 修复宽屏显示器显示组件过大的问题
+1. 压缩npm包
 
 # 图例 Example
-![image-20250211172548584](https://github.com/70v-Yoyo/hexo-everyday-calendar/blob/main/example.jpg)
+![image-20250211172548584](https://70v-yoyo.github.io/images/example.jpg)
 
 The above picture shows the comparison of this plugin on desktop and mobile devices.
 

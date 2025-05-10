@@ -1,4 +1,10 @@
+
+
+<a>![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)</a>
+
 <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/v/hexo-everyday-calendar)</a>
+
+[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=7.3.0-steelblue?style=flat-square&logo=hexo)](https://hexo.io)
 
 <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/dt/hexo-everyday-calendar)</a>
 
@@ -52,6 +58,10 @@ npm install hexo-everyday-calendar
 
 1. 修复宽屏显示器显示组件过大的问题
 1. 压缩npm包
+
+- 5.10
+
+1. 修改README
 
 # 图例 Example
 ![image-20250211172548584](https://70v-yoyo.github.io/images/example.jpg)

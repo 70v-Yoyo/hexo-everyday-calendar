@@ -1,12 +1,6 @@
 
 
-<a>![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)</a>
-
-<a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/v/hexo-everyday-calendar)</a>
-
-[![Required Hexo version](https://img.shields.io/badge/hexo-%3E=7.3.0-steelblue?style=flat-square&logo=hexo)](https://hexo.io)
-
-<a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/dt/hexo-everyday-calendar)</a>
+<a>![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)</a> <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/v/hexo-everyday-calendar)</a> [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=7.3.0-steelblue?style=flat-square&logo=hexo)](https://hexo.io) <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/dt/hexo-everyday-calendar)</a>
 
 This is a practical calendar that automatically counts the number of articles published by the blogger each day and displays them in different color grades.
 

@@ -2,21 +2,22 @@
 
 <a>![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)</a> <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/v/hexo-everyday-calendar)</a> [![Required Hexo version](https://img.shields.io/badge/hexo-%3E=7.3.0-steelblue?style=flat-square&logo=hexo)](https://hexo.io) <a href="https://www.npmjs.com/package/hexo-everyday-calendar">![](https://img.shields.io/npm/dt/hexo-everyday-calendar)</a>
 
-This is a practical calendar that automatically counts the number of articles published by the blogger each day and displays them in different color grades.
+This is a practical calendar plugin for hexo bloggers. It automatically counts the number of articles you publish each day and displays them in different color grades, like contribution statistics on GitHub.
 
-The adaptation on mobile devices has been accomplished which is a responsive layout that doesn't require any manual operation.
+It also features built-in responsive layout adaptation for mobile devices, requiring no manual operation.
 
-# Instructions
+# Getting Started
+
 1. Install it directly with npm
 ```bash
 npm install hexo-everyday-calendar
 ```
-2. (If it cannot be displayed normally) Add it to plugins, the directory of which is the same level as source (a directory)
-3. (If it cannot be displayed normally) Make sure you have a div with classname 'site-body' in your home page. The calendar module will automatically be placed there
-4. Custom place: In the place you want to put, set the classname of the div block to 'site-body', and you can put it in
+2. (If it cannot be displayed normally,) please ensure that you have a `div` element with the classname `'site-body'` on your homepage. The calendar will automatically be placed within this `div`.
+3. This plugin supports custom placement on your homepage. To use it, identify the `div` block where you want the plugin, and set its classname to `'site-body'`. You'll typically find  `div` block within your `index.html` file, located in your blog folder.
 4. check the effects:  `hexo clean&&hexo g&&hexo s`
 
-# 使用说明
+# 使用
+
 1. 直接用npm安装即可
 ```bash
 npm install hexo-everyday-calendar
@@ -57,8 +58,12 @@ npm install hexo-everyday-calendar
 
 1. 修改README
 
-# 图例 Example
+# 效果 Example
+
 ![image-20250211172548584](https://70v-yoyo.github.io/images/example.jpg)
 
 The above picture shows the comparison of this plugin on desktop and mobile devices.
 
+# Recommendations 
+
+- hexo-auto-toc：A plugin automatically generate a fixed table of contents that is fixed to the side of the article page.

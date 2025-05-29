@@ -66,4 +66,4 @@ The above picture shows the comparison of this plugin on desktop and mobile devi
 
 # Recommendations 
 
-- hexo-auto-toc：A plugin automatically generate a fixed table of contents that is fixed to the side of the article page.
+- hexo-auto-toc：A plugin automatically generates a responsive table of contents that fixes to the side of the article page or above the articles, depending on the user's device.

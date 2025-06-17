@@ -2,7 +2,7 @@
 function get_elements(){
 	colors=['#9BE9A8','#3FC463','#31A14E','#216E39']
 	// 获取 DOM 元素
-	p= document.getElementsByClassName('site-body')[0];//前面什么都没加const var的为全局变量
+	p= document.querySelector('body');//前面什么都没加const var的为全局变量
 	together=document.createElement('div');
 	together.classList.add('together');
 	p.appendChild(together);

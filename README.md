@@ -12,8 +12,8 @@ It also features built-in responsive layout adaptation for mobile devices, requi
 ```bash
 npm install hexo-everyday-calendar
 ```
-2. (If it cannot be displayed normally,) please ensure that you have a `div` element with the classname `'site-body'` on your homepage. The calendar will automatically be placed within this `div`.
-3. This plugin supports custom placement on your homepage. To use it, identify the `div` block where you want the plugin, and set its classname to `'site-body'`. You'll typically find  `div` block within your `index.html` file, located in your blog folder.
+2. (If it cannot be displayed normally,) please ensure that you have a tag `<body>`  in your homepage. The calendar will automatically be placed within this `div`.
+3. (Only for version <=1.3.9) This plugin supports custom placement on your homepage. To use it, identify the `div` block where you want the plugin, and set its classname to `'site-body'`. You'll typically find  `div` block within your `index.html` file, located in your blog folder.
 4. check the effects:  `hexo clean&&hexo g&&hexo s`
 
 # 使用
@@ -23,8 +23,8 @@ npm install hexo-everyday-calendar
 npm install hexo-everyday-calendar
 ```
 2. (如果不能正常显示) 同时放入与source同级的目录plugins下
-3. (如果不能正常显示) 确保你的首页中有classname为'site-body'的div块，日历模块会自动放入这里
-4. 自定义放入位置：在你想要放入的位置中，设置div块的classname为'site-body'，即可放入
+3. (如果不能正常显示) 确保你的首页中有`<body>`标签，日历模块会自动放入这里
+4. 自定义放入位置：在你想要放入的位置中，设置div块的classname为'site-body'，即可放入（仅适用于版本<=1.3.9）
 
 5. 查看效果 `hexo clean&&hexo g&&hexo s`
 
@@ -57,6 +57,10 @@ npm install hexo-everyday-calendar
 - 5.10
 
 1. 修改README
+
+- 6.17
+
+1. 更普遍适用于各类主题，放入body内而不是site-body中 more common
 
 # 效果 Example
 

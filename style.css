@@ -30,7 +30,7 @@
     }
     
     .grid-item {
-      width: 2vw;
+      width:2vw;
       height: 2vw;
       background-color: #fff;
       border:0.1vw solid #ddd;
@@ -84,14 +84,17 @@
   }
   
   .tooltip{
-    width: 16vw;
+    position: absolute;
+    width: auto;
+    white-space: nowrap;
     border: 0.1vw solid #ccc;
     background-color: #060d2a;
-    padding: 0.3vw;
+    padding: 3px 5px;
     border-radius: 1vw;
     display: none;
     color:#fff;
     font-size:2vw;
+    z-index:999;
   }
   label,span,.cpright,.lessmore{
     font-size: 2vw;
@@ -232,13 +235,7 @@
     }
     
     .tooltip{
-      width: 8vw;
-      border: 0.1vw solid #ccc;
-      background-color: #060d2a;
-      padding: 0.1vw;
       border-radius: 0.5vw;
-      display: none;
-      color:#fff;
       font-size:1vw;
     }
     label,span,.cpright,.lessmore{
@@ -369,15 +366,9 @@
         display: inline-block;
         margin-bottom: 1vw;
       }
-      
+
       .tooltip{
-        width: 8vw;
-        border: 0.1vw solid #ccc;
-        background-color: #060d2a;
-        padding: 0.1vw;
         border-radius: 0.5vw;
-        display: none;
-        color:#fff;
         font-size:1vw;
       }
       label,span,.cpright,.lessmore{

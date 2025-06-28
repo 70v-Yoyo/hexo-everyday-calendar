@@ -3,9 +3,11 @@ function get_elements(){
 	colors=['#9BE9A8','#3FC463','#31A14E','#216E39']
 	// 获取 DOM 元素
 	p= document.querySelector('body');//前面什么都没加const var的为全局变量
+	footer=document.querySelector('body footer')
 	together=document.createElement('div');
 	together.classList.add('together');
-	p.appendChild(together);
+	if(footer)p.insertBefore(together, footer);
+	else p.appendChild(together);
 	console.log(together);
 
 	inline=document.createElement('div');
@@ -135,13 +137,13 @@ function getRandomColor() {
 		  const daysInMonth = getDaysInMonth(month, year);
 		  for (let day = 1; day <= daysInMonth; day++) {
 			  const dayElement = document.createElement('div');
-			  dayElement.classList.add('grid-item');
-			  //dayElement.textContent = day;
-			  dayElement.setAttribute('block_date',`${year}-${padStart2_0(month+1)}-${padStart2_0(day)}`);
-			  monthContainer.appendChild(dayElement);
-  
 			  // 检查是否已打卡
 			  let thisday=`${year}-${padStart2_0(month+1)}-${padStart2_0(day)}`;
+			  dayElement.classList.add('grid-item');
+			  //dayElement.textContent = day;
+			  dayElement.setAttribute('block_date',`${thisday} : ${checkedDays[thisday]?? 'no'} ${checkedDays[thisday]===1?'post':'posts'}`);
+			  monthContainer.appendChild(dayElement);
+  
 			  if (thisday in checkedDays) {
 				  dayElement.classList.add('checked');
 				  switch (checkedDays[thisday]){
@@ -176,7 +178,7 @@ function getRandomColor() {
 					firework.style.backgroundColor = color;
 					firework.style.position = 'absolute';
 					const centerX=`${rect.left + scrollX}`;
-					const centerY=`${rect.top+ scrollY-210}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
+					const centerY=`${rect.top+ scrollY-10}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
 					console.log(rect.top,centerY)
 					// 设置烟花的初始位置为点击位置
 					container.style.left = centerX+'px';
@@ -275,7 +277,7 @@ function getRandomColor() {
 		daytip.style.position='absolute';
 		//console.log(block,scrollX);
 		daytip.style.left=`${rect.left + scrollX-30}px`;
-		daytip.style.top=`${rect.top+scrollY -260}px`;
+		daytip.style.top=`${rect.top+scrollY -60}px`;
 		daytip.style.display='block';
 		
 		})

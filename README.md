@@ -62,6 +62,12 @@ npm install hexo-everyday-calendar
 
 1. 更普遍适用于各类主题，放入body内而不是site-body中 more common
 
+- 6.28 
+
+1. 增加显示某日发表数量
+2. 修复弹出提示被遮挡问题
+3. 修复提示位置
+
 # 效果 Example
 
 ![image-20250211172548584](https://70v-yoyo.github.io/images/example.jpg)

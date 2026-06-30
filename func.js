@@ -24,7 +24,7 @@ function get_elements(){
 	label=document.getElementsByClassName('c_label')[0];
 	if(label===undefined){
 	  label=document.createElement('label');
-	  label.textContent='Select Year:';
+	  label.textContent='Select Year: ';
 	  label.classList.add('c_label')
 	  together.appendChild(label);
 	}
@@ -34,30 +34,36 @@ function get_elements(){
 	  yearSelect.classList.add('year-select');
 	  together.appendChild(yearSelect);
 	}
-	cpright=document.getElementsByClassName('cpright')[0];
-	if (cpright===undefined){//==会进行类型转换 ===不会
-	  cpright=document.createElement('span');
-	  cpright.textContent='by Yoyo';
-	  cpright.classList.add('cpright');
-	  together.appendChild(cpright);
-	}
+	// cpright=document.getElementsByClassName('cpright')[0];
+	// if (cpright===undefined){//==会进行类型转换 ===不会
+	//   cpright=document.createElement('span');
+	//   cpright.textContent='by Yoyo';
+	//   cpright.classList.add('cpright');
+	//   together.appendChild(cpright);
+	// }
 	inline.appendChild(title);
 	inline.appendChild(label);
 	inline.appendChild(yearSelect);
-	inline.appendChild(cpright);
+	// inline.appendChild(cpright);
 
+	middle=document.getElementsByClassName('middle')[0];
+	if(middle===undefined){
+		middle = document.createElement('div');
+		middle.classList.add('middle');
+		together.appendChild(middle);//添加一个新的类名
+	}
 	month_float=document.getElementsByClassName('month_float')[0];
 	if(month_float===undefined){
 		month_float = document.createElement('div');
 		month_float.classList.add('month_float');
-		together.appendChild(month_float);//添加一个新的类名
+		middle.appendChild(month_float);//添加一个新的类名
 	}
 
 	calendarElement=document.getElementsByClassName('calendar')[0];
 	if(calendarElement===undefined){
 	  calendarElement = document.createElement('div');
 	  calendarElement.classList.add('calendar');
-	  together.appendChild(calendarElement);
+	  middle.appendChild(calendarElement);
 	}
 
 	lessmore=document.getElementsByClassName('lessmore')[0];
@@ -81,7 +87,6 @@ function get_elements(){
 	  fireworks.classList.add('fireworks');
 	  together.appendChild(fireworks);
 	}
-	
   }
   
   // 渲染年份选择器
@@ -116,7 +121,6 @@ function getRandomColor() {
 
   // 渲染打卡墙
   function renderCalendar(year=currentYear) {
-	
 	  const daytip = document.createElement('div');
 	  daytip.classList.add('tooltip');
 	  together.appendChild(daytip);
@@ -162,65 +166,43 @@ function getRandomColor() {
 			  } else {
 				  dayElement.classList.add('unchecked');
 			  }
-  
-			  // 点击格子打卡
-			  dayElement.addEventListener('click', (event) => {
-				const rect = event.target.getBoundingClientRect();
-				
-				let numParticles = 10; // 粒子的数量
-				container=document.getElementsByClassName('fireworks')[0];
+			  const container = document.getElementsByClassName("fireworks")[0];
+			  dayElement.addEventListener("click", (event) => {
+				const originX = event.clientX;
+				const originY = event.clientY;
+
+				const numParticles = 10;
+				const radius = 20;
+
 				for (let i = 0; i < numParticles; i++) {
-					let firework = document.createElement('div');
-					firework.classList.add('firework');
-			
-					// 随机设置颜色
-					let color = getRandomColor();
-					firework.style.backgroundColor = color;
-					firework.style.position = 'absolute';
-					const centerX=`${rect.left + scrollX}`;
-					const centerY=`${rect.top+ scrollY-10}`; //rect.top+ scrollY才是元素的绝对位置 相对于整个网页的坐标
-					console.log(rect.top,centerY)
-					// 设置烟花的初始位置为点击位置
-					container.style.left = centerX+'px';
-					container.style.top =centerY+'px';
-					firework.style.left = `0px`;
-					firework.style.top =  `0vh`;
-					firework.style.width = '0.3vw';
-					firework.style.height = '0.3vw';
-					let factor=0.5
-					if(innerWidth<700){
-						firework.style.width = '1vw';
-						firework.style.height = '1vw';
-						factor=1
-					}
-					
-					firework.style.zIndex='10';
-					firework.style.display='block';
-					console.log(Math.PI/180)
-					const angle=(Math.PI/180)*(i+1)*(360/10);
-					// 计算目标点的坐标
-					const x = Math.cos(angle) * factor;
-					const y = Math.sin(angle) * factor;
-					console.log(angle,x,y,centerX,centerY);
-					 // 使用 transform 来计算并设置粒子的位置
-					firework.style.transform = `translate(${x}vw, ${y}vw)`;
-					// 设置烟花的飞行方向
-					// firework.style.animationName = 'explode';
-					// firework.style.animationTimingFunction = 'ease-out';
-					//console.log(firework)
-					
+					const firework = document.createElement("div");
+					firework.className = "firework";
+
+					firework.style.position = "absolute";
+					firework.style.left = `${originX}px`;
+					firework.style.top = `${originY}px`;
+					firework.style.width = "8px";
+					firework.style.height = "8px";
+					firework.style.borderRadius = "50%";
+					firework.style.background = getRandomColor();
 					container.appendChild(firework);
-					console.log(firework.style.transform);
-					// 或者使用这种方法触发样式更新
-					container.style.display = 'none';
-					container.offsetHeight;  // 强制浏览器重绘
-					container.style.display = 'block';
-					//清理：动画结束后移除烟花元素
-					// firework.addEventListener('animationend', function() {
-					// 	firework.remove();
-					// });
+
+					const angle = (i / numParticles) * Math.PI * 2;
+					const x = Math.cos(angle) * radius;
+					const y = Math.sin(angle) * radius;
+
+					requestAnimationFrame(() => {
+						firework.style.transition =
+							"transform 600ms ease-out, opacity 600ms";
+						firework.style.transform = `translate(${x}px, ${y}px)`;
+						firework.style.opacity = "0";
+					});
+
+					firework.addEventListener("transitionend", () => {
+						firework.remove();
+					});
 				}
-			  });
+			});
 		  }
 		  
 		  calendarElement.appendChild(monthContainer);

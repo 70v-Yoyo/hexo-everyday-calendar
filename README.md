@@ -28,46 +28,6 @@ npm install hexo-everyday-calendar
 
 5. 查看效果 `hexo clean&&hexo g&&hexo s`
 
-# 更新 Update
-
-- 2.14
-
-1. 修复select居中情况
-2. 增加打卡墙块根据提交数量形成颜色变化功能
-
-- 2.21
-
-1. 增加响应式布局，适配移动端
-2. 修复select组件垂直不居中的问题
-3. 国际化
-
-- 3.6
-
-1. 修复上下和左右间距不一致问题
-
-- 4.15
-
-1. 修复web端/移动端整体组件过小的问题
-
-- 5.5
-
-1. 修复宽屏显示器显示组件过大的问题
-1. 压缩npm包
-
-- 5.10
-
-1. 修改README
-
-- 6.17
-
-1. 更普遍适用于各类主题，放入body内而不是site-body中 more common
-
-- 6.28 
-
-1. 增加显示某日发表数量
-2. 修复弹出提示被遮挡问题
-3. 修复提示位置
-
 # 效果 Example
 
 ![image-20250211172548584](https://70v-yoyo.github.io/images/example.jpg)

@@ -1,415 +1,150 @@
+.together{
+  --scale:1.0;
+  --cell:clamp(0.3rem,2vw,1rem);
+  width:min(100%,50rem);
+
+  display: block;
+  font-family: "微软雅黑",  sans-serif !important;
+  text-align: center;
+  box-sizing: border-box;/*盒模型*/
+  height: max-content;
+  padding:1rem;
+  border-top:0.1rem dashed #d1d9e0;
+  border-bottom:0.1rem dashed #d1d9e0;
+  border-radius: 5rem;
+  margin: 1rem auto;
+  background-color:  rgba(255, 255, 255, 0.9);
+}
 .c_title{
-  font-size: 3vw;
+  font-size:calc(var(--scale) * 1.8rem);
   font-weight: bold;
 }
+.middle{
+  margin: 0 auto;
+}
+
+#header{
+  width: max-content;
+  margin: 0.3rem auto;
+}
+.calendar {
+  display: inline-block;
+  height:auto;
+  width: fit-content;
+}
+.grid-item {
+  box-sizing: border-box;/*总宽度包含边框*/
+  width:var(--cell);
+  aspect-ratio:1;/*约束高度*/
+  
+  background-color: #fff;
+  border:0.1rem solid #ddd;
+  cursor: pointer;
+  border-radius: 5%;
+}
+
+.grid-item.checked {
+  background-color: #92e39a;
+}
+
+.grid-item.unchecked {
+  background-color:#efefef;
+  opacity: 0.5;
+}
+
+.grid-item:hover {
+  opacity: 0.8;
+}
+/* 月份格子容器样式 */
+.month-container {
+  display: grid;
+  grid-template-columns: repeat(31,var(--cell));
+  gap: 0.2rem;
+  margin: 0.2rem;
+  justify-content: center;
+}
+#desc_blocks{
+  width: max-content;
+  display: inline-block;
+  padding-right: 0.5rem;
+  margin:0rem 0.2rem;
+}
+.desc_blocks_item{
+  display: inline-block;
+  width: var(--cell);
+  aspect-ratio:1;
+  border:0.1rem solid #ddd;
+  border-radius: 0.2rem;
+  margin:0 0.1rem;
+}
+.month-header {
+  font-size: 1rem;
+}
+.month_float{
+  display: inline-block;
+  margin-right: 0.6rem;
+}
+
+.tooltip{
+  position: absolute;
+  width: auto;
+  white-space: nowrap;
+  border: 0.1rem solid #ccc;
+  background-color: #060d2a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 1rem;
+  display: none;
+  color:#fff;
+  font-size:calc(var(--scale) * 1.2rem);
+  z-index:999;
+}
+label,span,.cpright,.lessmore{
+  font-size: calc(var(--scale) * 2rem);
+}
+
+.lessmore{
+  font-size: calc(var(--scale) * 1rem);
+  text-align: right;
+  margin:0.3rem 5rem 0.3rem auto;
+}
+span{
+  margin:0rem 0.5rem; 
+}
+.c_label{
+  font-size: calc(var(--scale) * 1.5rem);
+  margin-left: 1rem;
+}
+select{
+  text-align-last: center; /* 确保选中的项居中 */
+  width:calc(var(--scale) * 8rem);
+  font-size: calc(var(--scale) * 1.5rem);
+  border-radius: 2rem;
+  padding:0.2rem 1rem;
+  background-color: transparent !important;
+}
+/* .cpright{
+  color:#ccc;
+  opacity: 0.1;
+  font-size: calc(var(--scale) * 1rem);
+} */
+.fireworks{/*固定幕布*/
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: transparent;
+  pointer-events:none;
+}
+/* 桌面及大屏 */
+/* @media (min-width:1281px) {}
+
+/* 手机 */
+@media (max-width: 768px) {
   .together{
-    display: block;
-    font-family: "微软雅黑",  sans-serif !important;
-    width:100vw;
-    text-align: center;
-    box-sizing: border-box;/*盒模型*/
-    height: max-content;
-    padding:1vw 0vw;
-    border-top:0.1vw dashed #d1d9e0;
-    border-bottom:0.1vw dashed #d1d9e0;
-    border-radius: 5vw;
-    margin: 1vw auto;
-    background-color:  rgba(255, 255, 255, 0.9);
-    padding-right: 2vw;
-    padding-bottom: 1.5vw;
-  }
-  #header{
-    width: max-content;
-    margin:0.5vw auto;
-   }
-    .calendar {
-      display: inline-block;
-      margin:auto;
-      height:auto;
-      width: 85vw;
-    }
-    
-    .grid-item {
-      width:2vw;
-      height: 2vw;
-      background-color: #fff;
-      border:0.1vw solid #ddd;
-      border-radius: 0.5vw;
-      cursor: pointer;
-    }
-    
-    .grid-item.checked {
-      background-color: #92e39a;
-    }
-    
-    .grid-item.unchecked {
-      background-color:#efefef;
-      opacity: 0.5;
-    }
-    
-    .grid-item:hover {
-      opacity: 0.8;
-    }
-    /* 月份格子容器样式 */
-  .month-container {
-    width:inherit;
-    display: grid;
-    grid-template-columns: repeat(31, 2vw); /* 每周7天 */
-    gap: 0.5vw;
-    margin: 0.5vw;
-    justify-content: center;
-  }
-  #desc_blocks{
-    width: 6vw;
-    display: inline-block;
-    padding-right: 0.5vw;
-    margin:0vw 0.2vw;
-  }
-  .desc_blocks_item{
-    display: inline-block;
-    width: 1vw;
-    height: 1vw;
-    border:0.1vw solid #ddd;
-    border-radius: 0.2vw;
-    margin:0 0.1vw;
-  }
-  .month-header {
-    width: 4vw;
-    font-size: 2vw;
+    --scale:0.5;
   }
   .month_float{
-    width:4vw;
-    display: inline-block;
-    margin-bottom: 1vw;
+    display:none;
   }
-  
-  .tooltip{
-    position: absolute;
-    width: auto;
-    white-space: nowrap;
-    border: 0.1vw solid #ccc;
-    background-color: #060d2a;
-    padding: 3px 5px;
-    border-radius: 1vw;
-    display: none;
-    color:#fff;
-    font-size:2vw;
-    z-index:999;
-  }
-  label,span,.cpright,.lessmore{
-    font-size: 2vw;
-  }
-  
-  .lessmore{
-    text-align: right;
-    margin:0.3vw 5vw 0.3vw auto;
-  }
-  span{
-    margin:0vw 0.5vw;
-  }
-  .c_label{
-    margin-left: 1vw;
-  }
-  select{
-    /* text-align: center;  */
-    text-align-last: center; /* 确保选中的项居中 */
-    width:8vw;
-    height:3vw;
-    line-height: 2vw;
-    /* border-left: 1vw solid lightblue; */
-    /* border-right: 1vw solid lightblue; */
-    font-size: 2vw;
-    margin: 1vw;
-    border-radius: 1.5vw;
-    padding:0.5vw 0;
-    background-color: transparent !important;
-  }
-  .cpright{
-    color:#ccc;
-    opacity: 0.4;
-  }
-  .fireworks{
-    position:absolute;
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
-    animation: explode 0.5s ease-out forwards;
-    opacity: 0.5;
-    background-color: transparent;
-  }
-  @keyframes explode {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(3);
-        opacity: 0;
-    }
-  }
-  /* 桌面及大屏 */
-@media (min-aspect-ratio: 1.1) and (max-aspect-ratio: 1.8) {
-  .c_title{
-    font-size: 1.5vw;
-    font-weight: bold;
-  }
-    .together{
-      display: block;
-      font-family: "微软雅黑",  sans-serif !important;
-      width:45vw;
-      text-align: center;
-      box-sizing: border-box;/*盒模型*/
-      height: max-content;
-      padding:0.5vw 0vw;
-      border-top:0.1vw dashed #d1d9e0;
-      border-bottom:0.1vw dashed #d1d9e0;
-      border-radius: 5vw;
-      margin: 1vw auto;
-      background-color:  rgba(255, 255, 255, 0.9);
-      padding-right: 3vw;
-      padding-bottom: 1.5vw;
-    }
-    #header{
-      width: max-content;
-      margin:0.5vw 0 0.5vw 9vw;
-     }
-      .calendar {
-        display: inline-block;
-        margin:auto;
-        height:auto;
-        width: max-content;
-      }
-      
-      .grid-item {
-        width: 0.8vw;
-        height: 0.8vw;
-        background-color: #fff;
-        border:0.1vw solid #ddd;
-        border-radius: 0.1vw;
-        cursor: pointer;
-      }
-      
-      .grid-item.checked {
-        background-color: #92e39a;
-      }
-      
-      .grid-item.unchecked {
-        background-color:#efefef;
-        opacity: 0.5;
-      }
-      
-      .grid-item:hover {
-        opacity: 0.8;
-      }
-      /* 月份格子容器样式 */
-    .month-container {
-      width:inherit;
-      display: grid;
-      grid-template-columns: repeat(31, 0.8vw); /* 每周7天 */
-      gap: 0.15vw;
-      margin: 0.15vw;
-      justify-content: center;
-    }
-    #desc_blocks{
-      width: 5vw;
-      display: inline-block;
-      padding-right: 0.5vw;
-      margin:0vw 0.2vw;
-    }
-    .desc_blocks_item{
-      display: inline-block;
-      width: 0.8vw;
-      height: 0.8vw;
-      border:0.1vw solid #ddd;
-      border-radius: 0.1vw;
-      margin:0 0.1vw;
-    }
-    .month-header {
-      width: 5vw;
-      font-size: 1vw;
-    }
-    .month_float{
-      width:5vw;
-      display: inline-block;
-      margin-bottom: 1vw;
-    }
-    
-    .tooltip{
-      border-radius: 0.5vw;
-      font-size:1vw;
-    }
-    label,span,.cpright,.lessmore{
-      font-size: 1.1vw;
-    }
-    
-    .lessmore{
-      text-align: right;
-      margin:0.3vw 5vw 0.3vw auto;
-      font-size: 1vw;
-    }
-    span{
-      margin:0vw 1vw;
-    }
-    .c_label{
-      margin-left: 1vw;
-    }
-    select{
-      /* text-align: center;  */
-      text-align-last: center; /* 确保选中的项居中 */
-      width: 6vw;
-      height:2vw;
-      line-height: 1.1vw;
-      /* border-left: 1vw solid lightblue; */
-      /* border-right: 1vw solid lightblue; */
-      font-size: 1.1vw;
-      margin: 1vw;
-      border-radius: 1vw;
-      background-color: transparent !important;
-    }
-    .cpright{
-      color:#ccc;
-      opacity: 0.1;
-    }
-    .fireworks{
-      position:absolute;
-      width: 0.3vw;
-      height: 0.3vw;
-      border-radius: 50%;
-      animation: explode 0.5s ease-out forwards;
-      opacity: 0.5;
-      background-color: transparent;
-    }
 }
-  /* 超宽屏 */
-  @media (min-aspect-ratio: 1.8)  {
-    .c_title{
-      font-size: 1.5vw;
-      font-weight: bold;
-    }
-      .together{
-        display: block;
-        font-family: "微软雅黑",  sans-serif !important;
-        width:max-content;
-        text-align: center;
-        box-sizing: border-box;/*盒模型*/
-        height: max-content;
-        padding:0.5vw 0vw;
-        border-top:0.1vw dashed #d1d9e0;
-        border-bottom:0.1vw dashed #d1d9e0;
-        border-radius: 5vw;
-        margin: 1vw auto;
-        background-color:  rgba(255, 255, 255, 0.9);
-        padding-right: 3vw;
-        padding-bottom: 1.5vw;
-      }
-      #header{
-        width: max-content;
-        margin:0.5vw 0 0.5vw 9vw;
-       }
-        .calendar {
-          display: inline-block;
-          margin:auto;
-          height:auto;
-          width: max-content;
-        }
-        
-        .grid-item {
-          width: 1rem;
-          height: 1rem;
-          background-color: #fff;
-          border:0.1vw solid #ddd;
-          border-radius: 0.1rem;
-          cursor: pointer;
-        }
-        
-        .grid-item.checked {
-          background-color: #92e39a;
-        }
-        
-        .grid-item.unchecked {
-          background-color:#efefef;
-          opacity: 0.5;
-        }
-        
-        .grid-item:hover {
-          opacity: 0.8;
-        }
-        /* 月份格子容器样式 */
-      .month-container {
-        width:inherit;
-        display: grid;
-        grid-template-columns: repeat(31, 1rem); /* 每周7天 */
-        gap: 0.2rem;
-        margin: 0.2rem;
-        justify-content: center;
-      }
-      #desc_blocks{
-        width: 5vw;
-        display: inline-block;
-        padding-right: 0.5vw;
-        margin:0vw 0.2vw;
-      }
-      .desc_blocks_item{
-        display: inline-block;
-        width: 0.8vw;
-        height: 0.8vw;
-        border:0.1vw solid #ddd;
-        border-radius: 0.1vw;
-        margin:0 0.1vw;
-      }
-      .month-header {
-        width: 5vw;
-        font-size: 1vw;
-      }
-      .month_float{
-        width:5vw;
-        display: inline-block;
-        margin-bottom: 1vw;
-      }
-
-      .tooltip{
-        border-radius: 0.5vw;
-        font-size:1vw;
-      }
-      label,span,.cpright,.lessmore{
-        font-size: 1.1vw;
-      }
-      
-      .lessmore{
-        text-align: right;
-        margin:0.3vw 5vw 0.3vw auto;
-        font-size: 1vw;
-      }
-      span{
-        margin:0vw 1vw;
-      }
-      .c_label{
-        margin-left: 1vw;
-      }
-      select{
-        /* text-align: center;  */
-        text-align-last: center; /* 确保选中的项居中 */
-        width: 6vw;
-        height:2vw;
-        line-height: 1.1vw;
-        /* border-left: 1vw solid lightblue; */
-        /* border-right: 1vw solid lightblue; */
-        font-size: 1.1vw;
-        margin: 1vw;
-        border-radius: 1vw;
-        background-color: transparent !important;
-      }
-      .cpright{
-        color:#ccc;
-        opacity: 0.1;
-      }
-      .fireworks{
-        position:absolute;
-        width: 0.3vw;
-        height: 0.3vw;
-        border-radius: 50%;
-        animation: explode 0.5s ease-out forwards;
-        opacity: 0.5;
-        background-color: transparent;
-      }
-  }
